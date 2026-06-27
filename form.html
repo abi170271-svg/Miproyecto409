@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+     <!-- Barra superior -->
+    <div class="top-bar">
+        🌱 Bienvenido a DRY-ON | Impermeabilizantes ecológicos
+    </div>
+
+    <!-- Header principal -->
+    <header>
+        <div class="logo-area">
+            <img src="imagenes/image.png" alt="Logo Dry-On" class="logo"> <h1>DRY-ON</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="user-icons">
+            <div><i class="fas fa-user"></i><br>Cuenta</div>
+            <div><i class="fas fa-heart"></i><br>Favoritos</div>
+            <div><i class="fas fa-shopping-cart"></i><br>Carrito</div>
+        </div>
+    </header>
+
+    <!-- Menú de categorías -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="mision.html">Misión</a></li>
+            <li><a href="vision.html">Visión</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="unicel.html">Utilidad</a></li>
+            <li><a href="form.html">formulario</a></li>
+        </ul>
+    </nav>
+
+    <center>
+    <section class="proceso">
+    <h1>Formulario de Contacto</h1>
+    <form action="http://localhost:3000/guardar" method="POST">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required><br><br>
+
+        <label>Correo:</label>
+        <input type="email" name="correo" required><br><br>
+
+        <label>Mensaje:</label>
+        <textarea name="mensaje" required></textarea><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+    </section>
+    </center>
+</body>
+</html>

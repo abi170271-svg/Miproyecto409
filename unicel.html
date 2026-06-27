@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Misión | DRY-ON</title>
+  <link rel="stylesheet" href="utilidad.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div class="top-bar">🌱 Bienvenido a DRY-ON | Impermeabilizantes ecológicos</div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-area">
+      <img src="imagenes/image.png" alt="Logo Dry-On" class="logo">
+      <h1>DRY-ON</h1>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar productos...">
+      <i class="fas fa-search"></i>
+    </div>
+    <div class="user-icons">
+      <div><i class="fas fa-user"></i><br>Cuenta</div>
+      <div><i class="fas fa-heart"></i><br>Favoritos</div>
+      <div><i class="fas fa-shopping-cart"></i><br>Carrito</div>
+    </div>
+  </header>
+
+  <!-- Menú -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="mision.html" >Misión</a></li>
+      <li><a href="vision.html ">Visión</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="unicel.html"class="active">Utilidad</a></li>
+      <li><a href="form.html">formulario</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido Misión -->
+  <section class="mision">
+    <h2>Utilidad</h2>
+    <p>
+      En <strong>DRY‑ON</strong> Ser un proyecto reconocido por promover la reutilizacion de materiales contaminantes y
+      contribuir al desarrollo de alternativas sustentables, buscamosgenerar conciencia ambiental en nuestra comunidad
+      y demostrar que el reciclaje del unicel puede convertirse en una solucion practica que beneficietanto el medio ambiente como a las personas.
+    </p>
+    <div class="valores">
+      <h3>Valores que nos guían:</h3>
+      <ul>
+        <li>🌍 Compromiso con el medio ambiente</li>
+        <li>🏠 Protección de hogares</li>
+        <li>♻️ Innovación en reciclaje</li>
+        <li>🤝 Responsabilidad social</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="carrusel">
+        <div class="imagenes">
+            <img src="imagenes/imagen2.png" alt="Imagen 1">
+            <img src="imagenes/imagen3.png" alt="Imagen 2">
+            <img src="imagenes/imagen4.png" alt="Imagen 3">
+        </div>
+        
+        <button class="boton prev" onclick="cambiarImagenManual(-1)">❮</button>
+        <button class="boton next" onclick="cambiarImagenManual(1)">❯</button>
+
+        <div class="indicadores">
+            <span class="punto activo" onclick="irAImagen(0)"></span>
+            <span class="punto" onclick="irAImagen(1)"></span>
+            <span class="punto" onclick="irAImagen(2)"></span>
+        </div>
+    </div>
+
+    <script>
+        let indice = 0;
+        const imagenesContenedor = document.querySelector('.imagenes');
+        const totalImagenes = document.querySelectorAll('.imagenes img').length;
+        const puntos = document.querySelectorAll('.punto');
+        
+        let autoPlay;
+
+        function actualizarCarrusel() {
+            imagenesContenedor.style.transform = `translateX(-${indice * 100}%)`;
+            
+            puntos.forEach((punto, idx) => {
+                if (idx === indice) {
+                    punto.classList.add('activo');
+                } else {
+                    punto.classList.remove('activo');
+                }
+            });
+        }
+
+        function cambiarImagen(direccion) {
+            indice = (indice + direccion + totalImagenes) % totalImagenes;
+            actualizarCarrusel();
+        }
+
+        function irAImagen(nuevoIndice) {
+            indice = nuevoIndice;
+            actualizarCarrusel();
+            reiniciarAutoPlay();
+        }
+
+        function cambiarImagenManual(direccion) {
+            cambiarImagen(direccion);
+            reiniciarAutoPlay();
+        }
+
+        /* Desafío: Transición automática usando setInterval */
+        function iniciarAutoPlay() {
+            autoPlay = setInterval(() => {
+                cambiarImagen(1);
+            }, 3000); 
+        }
+
+        function reiniciarAutoPlay() {
+            clearInterval(autoPlay);
+            iniciarAutoPlay();
+        }
+
+        iniciarAutoPlay();
+    </script>
+
+  <!-- Footer -->
+  <footer>
+    <p>Contacto: 5561856808 | Email: dryon@ecoproductos.mx</p>
+    <p>&copy; 2026 DRY‑ON | Impermeabilizantes ecológicos</p>
+  </footer>
+ 
+
+</body>
+</html>
