@@ -219,3 +219,135 @@ footer {
   color: #fff;
   padding: 20px 0;
 }
+
+/* ====== RESPONSIVE ====== */
+
+/* Tablets (pantallas medianas) */
+@media (max-width: 992px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .logo-area img {
+    height: 50px;
+  }
+
+  .logo-area h1 {
+    font-size: 1.6rem;
+  }
+
+  .search-bar {
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .search-bar input {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .user-icons {
+    gap: 15px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+  }
+
+  nav ul li a {
+    margin: 10px;
+    font-size: 0.9rem;
+  }
+
+  .mision {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .carrusel {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .imagenes img {
+    height: 250px;
+  }
+}
+
+/* Celulares (pantallas pequeñas) */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 15px;
+  }
+
+  .logo-area img {
+    height: 40px;
+  }
+
+  .logo-area h1 {
+    font-size: 1.3rem;
+  }
+
+  .search-bar {
+    margin: 15px 0;
+  }
+
+  .search-bar input {
+    font-size: 0.85rem;
+    padding: 10px 35px 10px 15px;
+  }
+
+  .user-icons {
+    flex-direction: row;
+    gap: 10px;
+    font-size: 0.75rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  nav ul li a {
+    margin: 8px 0;
+    font-size: 0.85rem;
+  }
+
+  .mision {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .valores li {
+    font-size: 0.9rem;
+  }
+
+  .carrusel {
+    width: 95%;
+    max-width: 350px;
+  }
+
+  .imagenes img {
+    height: 200px;
+  }
+
+  .boton {
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+
+  .indicadores {
+    gap: 6px;
+    padding: 4px 8px;
+  }
+
+  .punto {
+    width: 8px;
+    height: 8px;
+  }
+}
